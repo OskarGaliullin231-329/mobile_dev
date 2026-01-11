@@ -90,8 +90,10 @@ const styles = StyleSheet.create({
     color: '#bbb',
   },
   reactLogo: {
-    width: 100,
-    height: 100,
-    resizeMode: 'contain',
+    height: 178,
+    width: 290,
+    bottom: 0,
+    left: 0,
+    position: 'absolute',
   },
 });
