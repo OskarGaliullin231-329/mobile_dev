@@ -33,7 +33,7 @@ export default function HomeScreen() {
               web: 'F12',
             })}
           </ThemedText>{' '}
-          to open developer tools.
+          to open developer tools. Go fuck yourself to summarize.
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
@@ -73,6 +73,13 @@ export default function HomeScreen() {
           <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
           <ThemedText type="defaultSemiBold">app-example</ThemedText>.
         </ThemedText>
+      </ThemedView>
+      <ThemedView style={styles.stepContainer}>
+        <Link href="/page">
+          <Link.Trigger>
+            <ThemedText type="subtitle">Открыть тестовую страницу</ThemedText>
+          </Link.Trigger>
+        </Link>
       </ThemedView>
     </ParallaxScrollView>
   );
