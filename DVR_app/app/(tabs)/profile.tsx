@@ -11,6 +11,7 @@ import {
   RefreshControl,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { useRouter } from 'expo-router';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
@@ -48,6 +49,7 @@ export default function ProfileScreen() {
   const [videoRecorders, setVideoRecorders] = useState<VideoRecorder[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  const router = useRouter();
 
   // Заглушка данных (позже заменить на реальный API)
   const mockProfile: UserProfile = {
@@ -107,7 +109,7 @@ export default function ProfileScreen() {
     loadProfileData();
   };
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     Alert.alert(
       'Выход из системы',
       'Вы уверены, что хотите выйти?',
@@ -116,9 +118,13 @@ export default function ProfileScreen() {
         { 
           text: 'Выйти', 
           style: 'destructive',
-          onPress: () => {
-            // TODO: Реализовать выход (очистка токена, навигация на логин)
-            Alert.alert('Успешно', 'Вы вышли из системы');
+          onPress: async () => {
+            try {
+              await AsyncStorage.removeItem('user');
+              router.replace('/(tabs)/login');
+            } catch (error) {
+              Alert.alert('Ошибка', 'Не удалось выйти из системы');
+            }
           }
         }
       ]

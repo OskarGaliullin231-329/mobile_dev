@@ -44,6 +44,20 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="clock.fill" color={color} />,
         }}
       />
+      <Tabs.Screen
+        name="DVRs"
+        options={{
+          title: 'Регистраторы',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="video.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'Профиль',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="person.fill" color={color} />,
+        }}
+      />
     </Tabs>
   );
 }
