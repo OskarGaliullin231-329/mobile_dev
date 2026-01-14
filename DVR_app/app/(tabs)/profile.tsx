@@ -140,8 +140,13 @@ export default function ProfileScreen() {
 
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#4A90E2', dark: '#1D3D47' }}
-      headerImage={<HelloWave />}
+      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+      headerImage={
+        <Image
+          source={require('@/assets/images/mosgortrans_logo.png')}
+          style={styles.reactLogo}
+        />
+      }
       refreshControl={
         <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
       }
@@ -522,5 +527,12 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#6c757d',
     marginBottom: 4,
+  },
+  reactLogo: {
+    height: 178,
+    width: 290,
+    bottom: 0,
+    left: 0,
+    position: 'absolute',
   },
 });

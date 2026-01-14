@@ -5,25 +5,29 @@
 
 import { Platform } from 'react-native';
 
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
+const tintColorLight = '#1e40af'; // Темно-синий для корпоративного стиля
+const tintColorDark = '#3b82f6'; // Светло-синий для темной темы
 
 export const Colors = {
   light: {
-    text: '#11181C',
-    background: '#fff',
+    text: '#1f2937', // Темно-серый текст
+    background: '#f8fafc', // Светло-серый фон
     tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
+    icon: '#6b7280', // Серый для иконок
+    tabIconDefault: '#9ca3af',
     tabIconSelected: tintColorLight,
+    card: '#ffffff', // Белые карточки
+    border: '#e5e7eb', // Светло-серые границы
   },
   dark: {
-    text: '#ECEDEE',
-    background: '#151718',
+    text: '#f9fafb', // Светло-серый текст
+    background: '#111827', // Темно-серый фон
     tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
+    icon: '#d1d5db', // Светло-серые иконки
+    tabIconDefault: '#6b7280',
     tabIconSelected: tintColorDark,
+    card: '#1f2937', // Темно-серые карточки
+    border: '#374151', // Темно-серые границы
   },
 };
 
